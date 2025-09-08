@@ -1,0 +1,2 @@
+Ecrivez une fonction Surprise qui prend en paramètre une chaîne de caractères et qui retourne true si la chaîne contient au moins une lettre (minuscule ou majuscule), et false sinon.
+Par exemple : "1234" => false, "1234a" => true, "1234A" => true
