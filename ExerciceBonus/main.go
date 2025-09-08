@@ -2,21 +2,20 @@ package main
 
 import "fmt"
 
-func Binairedecimal(n int) string {
-	switch n {
-	case 0:
-		return "0"
-	case 1:
-		return "1"
+func BinaireDecimal(binaire string) int {
+	if len(binaire) == 1 {
+		if binaire == "0" {
+			return 0
+		}
+		return 1
 	}
-	if n%2 == 0 {
-		return Binairedecimal(n/2) + "0"
-	}
-	return Binairedecimal(n/2) + "1"
+
+	nb := int(binaire[len(binaire)-1] - '0')
+	return BinaireDecimal(binaire[:len(binaire)-1])*2 + nb
 }
 
 func main() {
-	fmt.Println(Binairedecimal(0))
-	fmt.Println(Binairedecimal(5))
-	fmt.Println(Binairedecimal(10))
+	fmt.Println(BinaireDecimal("1011"))
+	fmt.Println(BinaireDecimal("1001"))
+	fmt.Println(BinaireDecimal("1111"))
 }
