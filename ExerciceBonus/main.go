@@ -9,7 +9,10 @@ func Binairedecimal(n int) string {
 	case 1:
 		return "1"
 	}
-	return Binairedecimal(n/2) + fmt.Sprint(n%2)
+	if n%2 == 0 {
+		return Binairedecimal(n/2) + "0"
+	}
+	return Binairedecimal(n/2) + "1"
 }
 
 func main() {
